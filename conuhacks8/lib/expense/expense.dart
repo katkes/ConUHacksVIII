@@ -4,7 +4,12 @@ class Expense {
   late String type;
   late double price;
 
-  Expense(frequency, name, type, price);
+  Expense(int frequency, String name, String type, double price) {
+    this.frequency = frequency;
+    this.name = name;
+    this.type = type;
+    this.price = price;
+  }
 
   // Getters
   int get getFrequency => frequency;

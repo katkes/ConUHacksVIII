@@ -1,5 +1,28 @@
 const OpenAI = require("openai");
-const openai = new OpenAI({apiKey: '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'});
+const openai = new OpenAI({apiKey: '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'});
+
+
+// async function imageGet(){
+//     const response = await openai.chat.completions.create({
+//         model: "gpt-4-vision-preview",
+//         messages: [
+//             {
+//                 role: "user",
+//                 content: [
+//                     { type: "text", text: "give the item and price of the bill" },
+//                     {
+//                         type: "image_url",
+//                         image_url: {
+//                             "url": "https://raw.githubusercontent.com/katkes/ConUHacksVIII/main/bill1.jpg",
+//                         },
+//                     },
+//                 ],
+//             },
+//         ],
+//     });
+//
+//
+// }
 
 async function main() {
     const response = await openai.chat.completions.create({
@@ -8,7 +31,7 @@ async function main() {
             {
                 role: "user",
                 content: [
-                    { type: "text", text: "give the item and price of the bill" },
+                    { type: "text", text: "Give me the price of the bill. Only give me the number on the bill" },
                     {
                         type: "image_url",
                         image_url: {
@@ -20,6 +43,8 @@ async function main() {
         ],
     });
     console.log(response.choices[0]);
+    console.log(response.length);
+
 }
 main();
 

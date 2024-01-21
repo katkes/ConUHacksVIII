@@ -28,10 +28,10 @@ Flutter: We chose Flutter for building the Inflation Insights app, ensuring a co
 Firebase: For the database, we relied on Firebase. It offered real-time syncing of user data across devices and secure authentication services for user login and signup.
 
 # Built With
-- dart
-- express.js
-- firebase
-- flutter
-- git
-- node.js
-- openai
+- Dart
+- Express.js
+- Firebase
+- Flutter
+- Git
+- Node.js
+- Open-AI API

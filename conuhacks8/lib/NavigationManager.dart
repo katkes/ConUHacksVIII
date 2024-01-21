@@ -1,6 +1,5 @@
 import 'package:conuhacks8/Finance_Statement/editable_page.dart';
 import 'package:conuhacks8/HomePage/MyFinancialStatement.dart';
-import 'package:conuhacks8/HomePage/MyLearningCenter.dart';
 import 'package:flutter/material.dart';
 import 'HomePage/FinanceTracker.dart';
 import 'HomePage/Retirement.dart';
@@ -10,6 +9,7 @@ import 'HomePage/Student.dart';
 import 'MyProfile.dart';
 import 'ChatBot.dart';
 import 'main.dart';
+import 'HomePage/MyLearningCenter.dart';
 
 class NavigationManager {
   static void navigateTo(String routeName, BuildContext context) {

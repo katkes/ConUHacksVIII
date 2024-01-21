@@ -8,6 +8,7 @@ import 'HomePage/Investments.dart';
 import 'HomePage/Student.dart';
 import 'NavigationManager.dart';
 import 'HomePage/BottomNav.dart';
+import 'HomePage/MyLearningCenter.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -21,10 +22,10 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Inflation Insights',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.blueGrey,
         colorScheme: ColorScheme.fromSwatch().copyWith(
-          primary: Colors.blueAccent,
-          secondary: Colors.blueAccent,
+          primary: Color.fromARGB(255, 0, 58, 158),
+          secondary: Color.fromARGB(255, 0, 58, 158),
         ),
       ),
       home: HomePage(),
@@ -40,13 +41,23 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Inflation Insights'),
-        backgroundColor: Colors.blueAccent,
+        title: Text(
+          'inflation insights',
+          style: TextStyle(
+            fontFamily: 'YesevaOne', // Font family as declared in pubspec.yaml
+            fontSize: 30, // Adjust the font size as needed
+            color: Color.fromARGB(255, 0, 26, 156),
+          ),
+        ),
+        backgroundColor: Color.fromARGB(255, 245, 215, 67),
       ),
       body: Container(
         decoration: BoxDecoration(
           gradient: LinearGradient(
-            colors: [Colors.amber[700]!, Colors.blueAccent],
+            colors: [
+              Color.fromARGB(255, 255, 241, 113)!,
+              Color.fromARGB(255, 99, 164, 255)
+            ],
             begin: Alignment.topLeft,
             end: Alignment.bottomRight,
           ),
@@ -60,23 +71,51 @@ class HomePage extends StatelessWidget {
               children: <Widget>[
                 Padding(
                   padding: buttonPadding,
-                  child: ElevatedButton(
-                    onPressed: () => NavigationManager.navigateTo(
-                        'My Financial Statement', context),
-                    child: Text('My Financial Statement'),
-                    style: ElevatedButton.styleFrom(minimumSize: Size(350, 80)),
+                  child: Column(
+                    children: [
+                      ElevatedButton(
+                        onPressed: () => NavigationManager.navigateTo(
+                            'My Financial Statement', context),
+                        child: Text(
+                          'My Financial Statement',
+                          style:
+                              TextStyle(fontSize: 20), // Set the font size here
+                        ),
+                        style: ElevatedButton.styleFrom(
+                            minimumSize: Size(350, 80)),
+                      ),
+                      SizedBox(height: 8), // Space between the button and text
+                    ],
                   ),
                 ),
                 Padding(
                   padding: buttonPadding,
-                  child: ElevatedButton(
-                    onPressed: () => NavigationManager.navigateTo(
-                        'My Learning Center', context),
-                    child: Text('My Learning Center'),
-                    style: ElevatedButton.styleFrom(minimumSize: Size(350, 80)),
+                  child: Column(
+                    children: [
+                      ElevatedButton(
+                        onPressed: () => NavigationManager.navigateTo(
+                            'My Learning Center', context),
+                        child: Text(
+                          'My Learning Center',
+                          style:
+                              TextStyle(fontSize: 20), // Set the font size here
+                        ),
+                        style: ElevatedButton.styleFrom(
+                            minimumSize: Size(350, 80)),
+                      ),
+                      SizedBox(height: 30),
+                      Text(
+                        'Calculators and Plans',
+                        style: TextStyle(
+                          fontSize: 24, // Adjust the font size here
+                          color: const Color.fromARGB(
+                              255, 0, 37, 100), // Corrected syntax with comma
+                        ),
+                      ),
+                    ],
                   ),
                 ),
-                SizedBox(height: 30), // Added space before grid buttons
+                SizedBox(height: 20), // Added space before grid buttons
                 Expanded(
                   child: Padding(
                     padding: EdgeInsets.symmetric(
@@ -91,22 +130,26 @@ class HomePage extends StatelessWidget {
                         ElevatedButton(
                           onPressed: () =>
                               NavigationManager.navigateTo('Student', context),
-                          child: Text('Student'),
+                          child:
+                              Text('Student', style: TextStyle(fontSize: 20)),
                         ),
                         ElevatedButton(
                           onPressed: () =>
                               NavigationManager.navigateTo('Mortgage', context),
-                          child: Text('Mortgage'),
+                          child:
+                              Text('Mortgage', style: TextStyle(fontSize: 20)),
                         ),
                         ElevatedButton(
                           onPressed: () => NavigationManager.navigateTo(
                               'Investments', context),
-                          child: Text('Investments'),
+                          child: Text('Investments',
+                              style: TextStyle(fontSize: 20)),
                         ),
                         ElevatedButton(
                           onPressed: () => NavigationManager.navigateTo(
                               'Retirement', context),
-                          child: Text('Retirement'),
+                          child: Text('Retirement',
+                              style: TextStyle(fontSize: 20)),
                         ),
                       ],
                     ),

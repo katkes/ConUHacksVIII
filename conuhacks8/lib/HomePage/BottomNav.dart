@@ -16,10 +16,13 @@ class _BottomNavState extends State<BottomNavBar> {
 
     switch (index) {
       case 0:
-        NavigationManager.navigateTo('Finance Tracker', context);
+        NavigationManager.navigateTo('My Profile', context);
         break;
       case 1:
-        NavigationManager.navigateTo('Retirement', context);
+        NavigationManager.navigateTo('Home', context);
+        break;
+      case 2:
+        NavigationManager.navigateTo('Chatbot', context);
         break;
     }
   }

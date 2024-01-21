@@ -1,3 +1,4 @@
+import 'package:conuhacks8/Finance_Statement/editable_page.dart';
 import 'package:conuhacks8/HomePage/MyFinancialStatement.dart';
 import 'package:conuhacks8/HomePage/MyLearningCenter.dart';
 import 'package:flutter/material.dart';
@@ -36,7 +37,7 @@ class NavigationManager {
         page = Student();
         break;
       case 'My Profile':
-        page = MyProfile(); // Replace with your Profile page widget
+        page = EditablePage(); // Replace with your Profile page widget
         break;
       case 'Home':
         // Assuming HomePage is directly in main.dart

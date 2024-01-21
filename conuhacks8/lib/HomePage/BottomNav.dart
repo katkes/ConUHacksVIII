@@ -18,7 +18,7 @@ class _BottomNavState extends State<BottomNavBar> {
 
     switch (index) {
       case 0:
-        NavigationManager.navigateTo('My Profile', context);
+        NavigationManager.navigateTo('My Expenses', context);
         break;
       case 1:
         NavigationManager.navigateTo('Home', context);
@@ -35,7 +35,7 @@ class _BottomNavState extends State<BottomNavBar> {
       items: const <BottomNavigationBarItem>[
         BottomNavigationBarItem(
           icon: Icon(Icons.person),
-          label: 'My Profile',
+          label: 'My Expenses',
         ),
         BottomNavigationBarItem(
           icon: Icon(Icons.house),

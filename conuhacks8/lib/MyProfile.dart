@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'HomePage/BottomNav.dart';
 
-class MyProfile extends StatelessWidget {
-  const MyProfile({super.key});
+class MyExpenses extends StatelessWidget {
+  const MyExpenses({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('My Profile'),
+        title: const Text('My Expenses'),
         backgroundColor: Colors.blue.shade900,
       ),
       body: Container(
@@ -23,7 +23,7 @@ class MyProfile extends StatelessWidget {
           ),
         ),
         child: const Center(
-          child: Text('My Profile'),
+          child: Text('My Expenses'),
         ),
       ),
       bottomNavigationBar: const BottomNavBar(),

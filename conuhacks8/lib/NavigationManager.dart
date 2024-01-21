@@ -6,7 +6,7 @@ import 'HomePage/Retirement.dart';
 import 'HomePage/Mortgage.dart';
 import 'HomePage/Investments.dart';
 import 'HomePage/Student.dart';
-import 'ChatBot.dart';
+import 'Photo2Text.dart';
 import 'main.dart';
 import 'HomePage/MyLearningCenter.dart';
 
@@ -35,15 +35,15 @@ class NavigationManager {
       case 'Student':
         page = const Student();
         break;
-      case 'My Profile':
-        page = const EditablePage(); // Replace with your Profile page widget
+      case 'My Expenses':
+        page = const EditablePage();
         break;
       case 'Home':
         // Assuming HomePage is directly in main.dart
         page = HomePage();
         break;
       case 'Chatbot':
-        page = const ChatBot(); // Replace with your Chatbot page widget
+        page = const PhotoToText(); // Replace with your Chatbot page widget
         break;
       default:
         page = Scaffold(

@@ -1,3 +1,4 @@
+import 'package:conuhacks8/Authentication/loginPage.dart';
 import 'package:conuhacks8/Authentication/signup.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
@@ -28,7 +29,7 @@ class MyApp extends StatelessWidget {
           secondary: Color.fromARGB(255, 0, 58, 158),
         ),
       ),
-      home: HomePage(),
+      home: LoginScreen(),
     );
   }
 }

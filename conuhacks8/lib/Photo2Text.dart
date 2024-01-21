@@ -1,26 +1,29 @@
 import 'package:flutter/material.dart';
 import 'HomePage/BottomNav.dart';
 
-class ChatBot extends StatelessWidget {
-  const ChatBot({super.key});
+class PhotoToText extends StatelessWidget {
+  const PhotoToText({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('ChatBot'),
-        backgroundColor: Colors.blue.shade900,
+        title: const Text('Photo2Text'),
+        backgroundColor: Color.fromARGB(255, 255, 241, 113),
       ),
       body: Container(
         decoration: BoxDecoration(
           gradient: LinearGradient(
-            colors: [Colors.amber[700]!, Colors.blue.shade900],
+            colors: [
+              Color.fromARGB(255, 255, 241, 113),
+              Color.fromARGB(255, 99, 164, 255)
+            ],
             begin: Alignment.topLeft,
             end: Alignment.bottomRight,
           ),
         ),
         child: const Center(
-          child: Text('ChatBot'),
+          child: Text('Photo2Text'),
         ),
       ),
       bottomNavigationBar: const BottomNavBar(),

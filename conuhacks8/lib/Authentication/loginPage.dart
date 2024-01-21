@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 //import 'package:flutter_svg/flutter_svg.dart';
 //import 'package:image_picker/image_picker.dart';
 import 'Widgets/text_field_input.dart';
+import 'package:conuhacks8/main.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({Key? key}) : super(key: key);
@@ -39,7 +40,10 @@ class _LoginScreenState extends State<LoginScreen> {
     });
 
     if (res == 'success') {
-      print("logged in");
+      // Navigate to HomePage on successful login
+      Navigator.of(context).pushReplacement(
+        MaterialPageRoute(builder: (context) => HomePage()),
+      );
     } else {
       showSnackBar(res, context);
     }

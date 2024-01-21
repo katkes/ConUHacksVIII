@@ -10,10 +10,8 @@ async function onSubmit(event){
         const reader = new FileReader();
 
         reader.onload = async function(e) {
-            // Extract Base64 data from the result
-            const base64String = e.target.result.split(',')[1]; // Remove the data URL part
+            const base64String = e.target.result.split(',')[1];
 
-            // Payload for OpenAI API
             const payload = {
                 model: "gpt-4-vision-preview",
                 messages: [
@@ -37,7 +35,6 @@ async function onSubmit(event){
             };
 
             try {
-                // OpenAI API endpoint
                 const response = await fetch('https://api.openai.com/v1/chat/completions', {
                     method: 'POST',
                     headers: {
@@ -49,7 +46,23 @@ async function onSubmit(event){
 
                 const data = await response.json();
                 console.log(data);
-                console.log(data.choices[0].message.content)
+                const content = data.choices[0].message.content;
+                console.log(content);
+
+                // Parsing the content
+                const [nameOfFood, price] = content.split(',').map(item => item.trim());
+
+                // Post to your local server
+                const localResponse = await fetch('http://localhost:3000', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ nameOfFood, price })
+                });
+
+                const localData = await localResponse.json();
+                console.log(localData);
             } catch (error) {
                 console.error('Error:', error);
             }

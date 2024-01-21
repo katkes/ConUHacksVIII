@@ -1,6 +1,4 @@
-// app.js
-
-async function onSubmit(event){
+async function onSubmit(event) {
     event.preventDefault();
 
     const fileInput = document.getElementById('fileUpload');
@@ -20,7 +18,7 @@ async function onSubmit(event){
                         content: [
                             {
                                 type: "text",
-                                text: "Of this bill, give me the name of the place of the bill's origin, comma, the price in a digit format. For exmaple, McDonald's,15"
+                                text: "Of this bill, give me the name of the place of the bill's origin, comma, the price in a digit format. For example, McDonald's,15"
                             },
                             {
                                 type: "image_url",
@@ -39,21 +37,17 @@ async function onSubmit(event){
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
-                        'Authorization': 'Bearer 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'
+                        'Authorization': 'Bearer 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'
                     },
                     body: JSON.stringify(payload)
                 });
 
                 const data = await response.json();
-                console.log(data);
                 const content = data.choices[0].message.content;
-                console.log(content);
-
-                // Parsing the content
                 const [nameOfFood, price] = content.split(',').map(item => item.trim());
 
-                // Post to your local server
-                const localResponse = await fetch('http://localhost:3000', {
+                // Post to your Node.js server
+                const localResponse = await fetch('http://localhost:3000/', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',

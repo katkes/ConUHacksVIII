@@ -1,0 +1,6 @@
+class expense {
+
+  St
+
+  expense();
+}

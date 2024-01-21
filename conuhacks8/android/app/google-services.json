@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "465181060956",
+    "project_id": "conuhacks8",
+    "storage_bucket": "conuhacks8.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:465181060956:android:46f71d11cdd0a38b4bdb99",
+        "android_client_info": {
+          "package_name": "com.example.conuhacksAnnabel"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAtJMye9z5mq5-_3syo6g7MbFPvKsY40bU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

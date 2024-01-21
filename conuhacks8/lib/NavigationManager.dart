@@ -6,6 +6,9 @@ import 'HomePage/Retirement.dart';
 import 'HomePage/Mortgage.dart';
 import 'HomePage/Investments.dart';
 import 'HomePage/Student.dart';
+import 'MyProfile.dart';
+import 'ChatBot.dart';
+import 'main.dart';
 
 class NavigationManager {
   static void navigateTo(String routeName, BuildContext context) {
@@ -31,6 +34,16 @@ class NavigationManager {
         break;
       case 'Student':
         page = Student();
+        break;
+      case 'My Profile':
+        page = MyProfile(); // Replace with your Profile page widget
+        break;
+      case 'Home':
+        // Assuming HomePage is directly in main.dart
+        page = HomePage();
+        break;
+      case 'Chatbot':
+        page = ChatBot(); // Replace with your Chatbot page widget
         break;
       default:
         page = Scaffold(

@@ -8,6 +8,7 @@ import 'HomePage/Investments.dart';
 import 'HomePage/Student.dart';
 import 'NavigationManager.dart';
 import 'HomePage/BottomNav.dart';
+import 'HomePage/MyLearningCenter.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();

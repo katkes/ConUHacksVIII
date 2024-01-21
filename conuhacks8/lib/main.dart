@@ -1,3 +1,5 @@
+import 'package:conuhacks8/Authentication/signup.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'HomePage/FinanceTracker.dart';
 import 'HomePage/Retirement.dart';
@@ -7,7 +9,9 @@ import 'HomePage/Student.dart';
 import 'NavigationManager.dart';
 import 'HomePage/BottomNav.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
   runApp(MyApp());
 }
 

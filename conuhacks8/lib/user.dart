@@ -1,4 +1,6 @@
-import 'package:conuhacks8/expense/expenseList.dart';
+import 'package:conuhacks8/expense/ExpenseList.dart';
+// import 'package:conuhacks8/expense/Expense.dart';
+import 'expense/expense.dart';
 
 class User {
   late String userName;
@@ -7,6 +9,20 @@ class User {
   late int age;
   late double income;
   late String city;
+  late ExpenseList expenses;
 
-  User(); // Default constructor
+  User(String userName, String name, String password, int age, double income,
+      String city) {
+    this.userName = userName;
+    this.name = name;
+    this.passWord = password;
+    this.age = age;
+    this.income = income;
+    this.city = city;
+    this.expenses = ExpenseList();
+  }
+
+  void addExpense(int frequency, String name, String type, double price) {
+    expenses.addExpense(new Expense(frequency, name, type, price));
+  }
 }

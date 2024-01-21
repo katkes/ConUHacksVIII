@@ -48,6 +48,7 @@ class HomePage extends StatelessWidget {
             fontSize: 30, // Adjust the font size as needed
             color: Color.fromARGB(255, 0, 26, 156),
           ),
+          textAlign: TextAlign.center,
         ),
         backgroundColor: Color.fromARGB(255, 245, 215, 67),
       ),
@@ -66,8 +67,8 @@ class HomePage extends StatelessWidget {
           padding: const EdgeInsets.only(top: 50.0),
           child: Center(
             child: Column(
-              mainAxisAlignment: MainAxisAlignment.start,
-              crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
               children: <Widget>[
                 Padding(
                   padding: buttonPadding,

@@ -15,14 +15,14 @@ class User {
       String city) {
     this.userName = userName;
     this.name = name;
-    this.passWord = password;
+    passWord = password;
     this.age = age;
     this.income = income;
     this.city = city;
-    this.expenses = ExpenseList();
+    expenses = ExpenseList();
   }
 
   void addExpense(int frequency, String name, String type, double price) {
-    expenses.addExpense(new Expense(frequency, name, type, price));
+    expenses.addExpense(Expense(frequency, name, type, price));
   }
 }

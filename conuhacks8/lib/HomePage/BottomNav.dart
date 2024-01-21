@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import '../NavigationManager.dart'; // Check if the path is correct
 
 class BottomNavBar extends StatefulWidget {
+  const BottomNavBar({super.key});
+
   @override
   _BottomNavState createState() => _BottomNavState();
 }
@@ -30,7 +32,7 @@ class _BottomNavState extends State<BottomNavBar> {
   @override
   Widget build(BuildContext context) {
     return BottomNavigationBar(
-      items: <BottomNavigationBarItem>[
+      items: const <BottomNavigationBarItem>[
         BottomNavigationBarItem(
           icon: Icon(Icons.person),
           label: 'My Profile',

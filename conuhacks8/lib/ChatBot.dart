@@ -2,11 +2,13 @@ import 'package:flutter/material.dart';
 import 'HomePage/BottomNav.dart';
 
 class ChatBot extends StatelessWidget {
+  const ChatBot({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('ChatBot'),
+        title: const Text('ChatBot'),
         backgroundColor: Colors.blue.shade900,
       ),
       body: Container(
@@ -17,11 +19,11 @@ class ChatBot extends StatelessWidget {
             end: Alignment.bottomRight,
           ),
         ),
-        child: Center(
+        child: const Center(
           child: Text('ChatBot'),
         ),
       ),
-      bottomNavigationBar: BottomNavBar(),
+      bottomNavigationBar: const BottomNavBar(),
     );
   }
 }

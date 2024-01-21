@@ -29,7 +29,7 @@ class ErrorInputField extends StatelessWidget {
           enabledBorder: inputBorder,
           filled: true,
           errorBorder:
-              OutlineInputBorder(borderSide: BorderSide(color: Colors.red)),
+              const OutlineInputBorder(borderSide: BorderSide(color: Colors.red)),
           contentPadding: const EdgeInsets.all(8)),
       keyboardType: textInputType,
       obscureText: isPass,

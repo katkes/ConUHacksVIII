@@ -1,10 +1,6 @@
-import 'dart:typed_data';
 import 'package:conuhacks8/Authentication/AuthMethods.dart';
 import 'package:conuhacks8/Authentication/loginPage.dart';
-import 'package:conuhacks8/Authentication/utlis.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
-import 'package:image_picker/image_picker.dart';
 import 'Widgets/text_field_input.dart';
 
 class SignupScreen extends StatefulWidget {
@@ -143,8 +139,7 @@ class _SignupScreenState extends State<SignupScreen> {
                   style: ElevatedButton.styleFrom(
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(8.0),
-                    ),
-                    primary: Colors.blue.shade900,
+                    ), backgroundColor: Colors.blue.shade900,
                   ),
                   child: isLoading
                       ? const CircularProgressIndicator(color: Colors.white)

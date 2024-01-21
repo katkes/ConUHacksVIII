@@ -2,11 +2,13 @@ import 'package:flutter/material.dart';
 import 'BottomNav.dart';
 
 class FinanceTracker extends StatelessWidget {
+  const FinanceTracker({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Finance Tracker'),
+        title: const Text('Finance Tracker'),
         backgroundColor: Colors.blue.shade900,
       ),
       body: Container(
@@ -17,11 +19,11 @@ class FinanceTracker extends StatelessWidget {
             end: Alignment.bottomRight,
           ),
         ),
-        child: Center(
+        child: const Center(
           child: Text('Fincance Tracker Page'),
         ),
       ),
-      bottomNavigationBar: BottomNavBar(),
+      bottomNavigationBar: const BottomNavBar(),
     );
   }
 }

@@ -6,7 +6,6 @@ import 'HomePage/Retirement.dart';
 import 'HomePage/Mortgage.dart';
 import 'HomePage/Investments.dart';
 import 'HomePage/Student.dart';
-import 'MyProfile.dart';
 import 'ChatBot.dart';
 import 'main.dart';
 import 'HomePage/MyLearningCenter.dart';
@@ -16,40 +15,40 @@ class NavigationManager {
     Widget page;
     switch (routeName) {
       case 'My Learning Center':
-        page = MyLearningCenter();
+        page = const MyLearningCenter();
         break;
       case 'My Financial Statement':
-        page = MyFinancialStatement();
+        page = const MyFinancialStatement();
         break;
       case 'Finance Tracker':
-        page = FinanceTracker();
+        page = const FinanceTracker();
         break;
       case 'Retirement':
-        page = Retirement();
+        page = const Retirement();
         break;
       case 'Mortgage':
-        page = Mortgage();
+        page = const Mortgage();
         break;
       case 'Investments':
-        page = Investments();
+        page = const Investment();
         break;
       case 'Student':
-        page = Student();
+        page = const Student();
         break;
       case 'My Profile':
-        page = EditablePage(); // Replace with your Profile page widget
+        page = const EditablePage(); // Replace with your Profile page widget
         break;
       case 'Home':
         // Assuming HomePage is directly in main.dart
         page = HomePage();
         break;
       case 'Chatbot':
-        page = ChatBot(); // Replace with your Chatbot page widget
+        page = const ChatBot(); // Replace with your Chatbot page widget
         break;
       default:
         page = Scaffold(
           appBar: AppBar(),
-          body: Center(child: Text('Page not found')),
+          body: const Center(child: Text('Page not found')),
         );
     }
     Navigator.push(

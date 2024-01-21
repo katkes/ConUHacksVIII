@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'BottomNav.dart';
 
 class MyLearningCenter extends StatefulWidget {
+  const MyLearningCenter({super.key});
+
   @override
   _MyLearningCenterState createState() => _MyLearningCenterState();
 }
@@ -86,21 +88,22 @@ class _MyLearningCenterState extends State<MyLearningCenter> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(
+        title: const Text(
           'My Learning Center',
           style: TextStyle(
             fontFamily: 'YesevaOne', // Font family as declared in pubspec.yaml
             fontSize: 30, // Adjust the font size as needed
             color: Color.fromARGB(255, 0, 26, 156),
           ),
+          textAlign: TextAlign.center,
         ),
-        backgroundColor: Color.fromARGB(255, 245, 215, 67),
+        backgroundColor: const Color.fromARGB(255, 245, 215, 67),
       ),
       body: Container(
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
           gradient: LinearGradient(
             colors: [
-              Color.fromARGB(255, 245, 215, 67)!,
+              Color.fromARGB(255, 255, 241, 113),
               Color.fromARGB(255, 99, 164, 255)
             ],
             begin: Alignment.topLeft,
@@ -112,7 +115,7 @@ class _MyLearningCenterState extends State<MyLearningCenter> {
             : Center(
                 child: Text(
                   'Your score: $_score/${_questions.length}',
-                  style: TextStyle(
+                  style: const TextStyle(
                     fontFamily:
                         'YesevaOne', // Font family as declared in pubspec.yaml
                     fontSize: 30, // Adjust the font size as needed
@@ -121,7 +124,7 @@ class _MyLearningCenterState extends State<MyLearningCenter> {
                 ),
               ),
       ),
-      bottomNavigationBar: BottomNavBar(),
+      bottomNavigationBar: const BottomNavBar(),
     );
   }
 
@@ -136,13 +139,13 @@ class _MyLearningCenterState extends State<MyLearningCenter> {
             Text(
               question['question'],
               textAlign: TextAlign.center,
-              style: TextStyle(
+              style: const TextStyle(
                 fontFamily: 'YesevaOne',
                 fontSize: 30,
                 color: Color.fromARGB(255, 0, 26, 156),
               ),
             ),
-            SizedBox(height: 80), // Space between text and first button
+            const SizedBox(height: 80), // Space between text and first button
             ...question['answers'].map<Widget>((answer) {
               return Padding(
                 padding:
@@ -152,11 +155,11 @@ class _MyLearningCenterState extends State<MyLearningCenter> {
                   height: 50.0, // Height of the button
                   child: ElevatedButton(
                     onPressed: () => _answerQuestion(answer['isCorrect']),
-                    child: Text(answer['text']),
                     style: ElevatedButton.styleFrom(
-                      primary: Colors.blue, // Background color of the button
-                      onPrimary: Colors.white, // Text color of the button
+                      foregroundColor: Colors.white,
+                      backgroundColor: Colors.blue, // Text color of the button
                     ),
+                    child: Text(answer['text']),
                   ),
                 ),
               );

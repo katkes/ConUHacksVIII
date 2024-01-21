@@ -174,7 +174,7 @@ class Retirement extends StatelessWidget {
           ),
         ),
       ),
-      bottomNavigationBar: BottomNavBar(),
+      bottomNavigationBar: const BottomNavBar(),
     );
   }
 }

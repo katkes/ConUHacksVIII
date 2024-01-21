@@ -29,7 +29,7 @@ class Student extends StatelessWidget {
                     bottom: 16.0), // Add margin to the bottom
                 padding: const EdgeInsets.all(12.0),
                 decoration: BoxDecoration(
-                  color: Color.fromARGB(255, 255, 255, 255),
+                  color: const Color.fromARGB(255, 255, 255, 255),
                   borderRadius: BorderRadius.circular(8.0),
                 ),
                 child: const Text(
@@ -61,7 +61,7 @@ class Student extends StatelessWidget {
                     bottom: 16.0), // Add margin to the bottom
                 padding: const EdgeInsets.all(12.0),
                 decoration: BoxDecoration(
-                  color: Color.fromARGB(255, 255, 255, 255),
+                  color: const Color.fromARGB(255, 255, 255, 255),
                   borderRadius: BorderRadius.circular(8.0),
                 ),
                 child: const Text(
@@ -84,7 +84,7 @@ class Student extends StatelessWidget {
                     bottom: 16.0), // Add margin to the bottom
                 padding: const EdgeInsets.all(12.0),
                 decoration: BoxDecoration(
-                  color: Color.fromARGB(255, 255, 255, 255),
+                  color: const Color.fromARGB(255, 255, 255, 255),
                   borderRadius: BorderRadius.circular(8.0),
                 ),
                 child: const Text(
@@ -114,7 +114,7 @@ class Student extends StatelessWidget {
                     bottom: 16.0), // Add margin to the bottom
                 padding: const EdgeInsets.all(12.0),
                 decoration: BoxDecoration(
-                  color: Color.fromARGB(255, 255, 255, 255),
+                  color: const Color.fromARGB(255, 255, 255, 255),
                   borderRadius: BorderRadius.circular(8.0),
                 ),
                 child: const Text(
@@ -142,7 +142,7 @@ class Student extends StatelessWidget {
           ),
         ),
       ),
-      bottomNavigationBar: BottomNavBar(),
+      bottomNavigationBar: const BottomNavBar(),
     );
   }
 }

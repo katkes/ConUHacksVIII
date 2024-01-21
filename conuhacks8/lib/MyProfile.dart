@@ -2,26 +2,31 @@ import 'package:flutter/material.dart';
 import 'HomePage/BottomNav.dart';
 
 class MyProfile extends StatelessWidget {
+  const MyProfile({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('My Profile'),
+        title: const Text('My Profile'),
         backgroundColor: Colors.blue.shade900,
       ),
       body: Container(
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
           gradient: LinearGradient(
-            colors: [Colors.amber[700]!, Colors.blue.shade900],
+            colors: [
+              Color.fromARGB(255, 255, 241, 113),
+              Color.fromARGB(255, 99, 164, 255)
+            ],
             begin: Alignment.topLeft,
             end: Alignment.bottomRight,
           ),
         ),
-        child: Center(
+        child: const Center(
           child: Text('My Profile'),
         ),
       ),
-      bottomNavigationBar: BottomNavBar(),
+      bottomNavigationBar: const BottomNavBar(),
     );
   }
 }

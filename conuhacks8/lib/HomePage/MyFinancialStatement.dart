@@ -4,17 +4,30 @@ import 'package:flutter/material.dart';
 import 'BottomNav.dart';
 
 class MyFinancialStatement extends StatelessWidget {
+  const MyFinancialStatement({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Financial Statement'),
-        backgroundColor: Colors.blue.shade900,
+        title: const Text(
+          'Financial Statement',
+          style: TextStyle(
+            fontFamily: 'YesevaOne', // Font family as declared in pubspec.yaml
+            fontSize: 25, // Adjust the font size as needed
+            color: Color.fromARGB(255, 0, 26, 156),
+          ),
+          textAlign: TextAlign.center,
+        ),
+        backgroundColor: Color.fromARGB(255, 255, 241, 113),
       ),
       body: Container(
         decoration: BoxDecoration(
           gradient: LinearGradient(
-            colors: [Colors.amber[700]!, Colors.blue.shade900],
+            colors: [
+              Color.fromARGB(255, 255, 241, 113),
+              Color.fromARGB(255, 99, 164, 255)
+            ],
             begin: Alignment.topLeft,
             end: Alignment.bottomRight,
           ),
@@ -27,8 +40,10 @@ class MyFinancialStatement extends StatelessWidget {
               Text(
                 'Yearly Financial Statement\nIncome: 1,000,000',
                 style: TextStyle(
-                  fontSize: 20,
-                  fontWeight: FontWeight.bold,
+                  fontFamily:
+                      'YesevaOne', // Font family as declared in pubspec.yaml
+                  fontSize: 25, // Adjust the font size as needed
+                  color: Color.fromARGB(255, 0, 26, 156),
                 ),
                 textAlign: TextAlign.center,
               ),

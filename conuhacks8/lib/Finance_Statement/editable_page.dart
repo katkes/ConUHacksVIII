@@ -1,8 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart' as Auth;
-import 'package:firebase_storage/firebase_storage.dart';
 
-import 'data/users.dart';
 import 'model/userModel.dart';
 import 'utils.dart';
 import 'scrollable_widget.dart';
@@ -10,6 +8,8 @@ import 'text_dialog_widget.dart';
 import 'package:flutter/material.dart';
 
 class EditablePage extends StatefulWidget {
+  const EditablePage({super.key});
+
   @override
   _EditablePageState createState() => _EditablePageState();
 }
@@ -212,7 +212,7 @@ class _EditablePageState extends State<EditablePage> {
       });
     } catch (e) {
       print('Error retrieving users from Firestore: $e');
-      throw e;
+      rethrow;
     }
   }
 
@@ -234,10 +234,10 @@ class _EditablePageState extends State<EditablePage> {
 }
 
 void WriteToDb(User newUser) async {
-  Auth.FirebaseAuth _auth = Auth.FirebaseAuth.instance;
+  Auth.FirebaseAuth auth = Auth.FirebaseAuth.instance;
   FirebaseFirestore firestore = FirebaseFirestore.instance;
 
-  Auth.User? user = _auth.currentUser;
+  Auth.User? user = auth.currentUser;
   String userId = "";
   if (user != null) {
     userId = user.uid;

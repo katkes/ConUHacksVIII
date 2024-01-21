@@ -4,7 +4,5 @@
   <component name="FrameworkDetectionExcludesConfiguration">
     <file type="web" url="file://$PROJECT_DIR$/conuhacks8/android" />
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_18" project-jdk-name="18" project-jdk-type="JavaSDK">
-    <output url="file://$PROJECT_DIR$/out" />
-  </component>
+  <component name="ProjectRootManager" version="2" project-jdk-name="Python 3.10 (Better_Call_SOEN_Backend)" project-jdk-type="Python SDK" />
 </project>

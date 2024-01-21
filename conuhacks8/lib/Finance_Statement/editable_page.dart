@@ -1,6 +1,8 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:conuhacks8/Finance_Statement/ServerExpense.dart';
 import 'package:firebase_auth/firebase_auth.dart' as Auth;
-
+import 'package:firebase_storage/firebase_storage.dart';
+import 'data/users.dart';
 import 'model/userModel.dart';
 import 'utils.dart';
 import 'scrollable_widget.dart';
@@ -15,13 +17,53 @@ class EditablePage extends StatefulWidget {
 }
 
 class _EditablePageState extends State<EditablePage> {
-  late List<User> users = List<User>.empty();
+  late List<User> users = [];
   late double totalExpense = 0;
+
+  List<Map<String, dynamic>> data = [];
+
+  void addData(String nameOfFood, String price) {
+    setState(() {
+      data.add({'name': nameOfFood, 'price': price});
+    });
+  }
 
   @override
   void initState() {
     super.initState();
+    GetAiDataFromDb();
     getUsersStatementInfo();
+  }
+
+  void GetAiDataFromDb() async {
+    FirebaseFirestore firestore = FirebaseFirestore.instance;
+    CollectionReference statementCollection = firestore.collection('expenses');
+
+    try {
+      QuerySnapshot querySnapshot = await statementCollection.get();
+
+      List<ServerExpense> dbExpenses = [];
+
+      for (QueryDocumentSnapshot documentSnapshot in querySnapshot.docs) {
+        // Access data from each document
+        Map<String, dynamic> data =
+            documentSnapshot.data() as Map<String, dynamic>;
+
+        String expense = data['nameOfFood'];
+        String priceString = data['price'];
+
+        int price = double.parse(priceString).round();
+
+        setState(() {
+          users.add(User(firstName: expense, lastName: "Weekly", age: price));
+        });
+
+        print(price);
+        print(expense);
+      }
+    } catch (error) {
+      print("Error fetching data: $error");
+    }
   }
 
   @override
@@ -267,6 +309,29 @@ void GetDataFromDb() async {
   }
 }
 
+Future<List<ServerExpense>> getDataFromCollection(String collectionName) async {
+  FirebaseFirestore firestore = FirebaseFirestore.instance;
+  CollectionReference collection = firestore.collection(collectionName);
+
+  try {
+    QuerySnapshot querySnapshot = await collection.get();
+
+    List<ServerExpense> dbExpenses = [];
+
+    for (QueryDocumentSnapshot documentSnapshot in querySnapshot.docs) {
+      // Access data from each document
+      Map<String, dynamic> data =
+          documentSnapshot.data() as Map<String, dynamic>;
+      dbExpenses.add(
+          ServerExpense(nameOfFood: data['nameOfFood'], price: data['price']));
+    }
+
+    return dbExpenses;
+  } catch (error) {
+    print("Error fetching data from collection $collectionName: $error");
+    throw error; // Re-throw the error to handle it in the calling code
+  }
+}
 // ignore_for_file: prefer_const_constructors
 
 final allUsers = <User>[

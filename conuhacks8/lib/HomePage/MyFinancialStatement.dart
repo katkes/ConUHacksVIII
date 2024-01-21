@@ -18,7 +18,10 @@ class MyFinancialStatement extends StatelessWidget {
           ),
         ),
         child: Center(
-          child: Text('My Financial Statement'),
+          child: Text(
+            'My Financial Statement',
+            style: TextStyle(fontSize: 20), // Adjust body text size here
+          ),
         ),
       ),
       bottomNavigationBar: BottomNavBar(),

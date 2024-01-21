@@ -48,6 +48,12 @@ dev_dependencies:
 # following page: https://dart.dev/tools/pub/pubspec
 # The following section is specific to Flutter packages.
 flutter:
+  assets:
+  - lib/HomePage/favicon.png
+  fonts:
+    - family: YesevaOne
+      fonts:
+        - asset: fonts/YesevaOne-Regular.ttf
 
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in
